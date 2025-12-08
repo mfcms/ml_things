@@ -91,9 +91,8 @@ print(f"Validation ROC AUC: {auc:.4f}")
 # Предсказание
 y_test_pred = model.predict(X_test)
 
-# Сохранение в правильном формате
 answers = pd.DataFrame({
-    'PassengerId': customer_ids,  # ← ПРАВИЛЬНО: соответствует порядку в test.csv
+    'PassengerId': customer_ids,
     'survived': y_test_pred.astype(int)
 })
 answers.to_csv('titanic_surv/answers.csv', index=False)
